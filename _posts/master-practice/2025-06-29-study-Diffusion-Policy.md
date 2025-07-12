@@ -296,7 +296,7 @@ DDPM 如何修改用于机器人的视觉运动策略
 
 #### 视觉观测条件化
 
-使用 DDPM 来近似条件分布 $p(\mathbf{A}_t | \mathbf{O}_t)$
+使用 DDPM 来近似条件分布 $p(\mathbf{A}_t \mid \mathbf{O}_t)$
 
 模型能够基于观测预测动作，无需推断未来状态
 
