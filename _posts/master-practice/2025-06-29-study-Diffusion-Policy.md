@@ -299,13 +299,17 @@ DDPM 如何修改用于机器人的视觉运动策略
 使用 DDPM 来近似条件分布 $p(\mathbf{A}_t | \mathbf{O}_t)$
 
 模型能够基于观测预测动作，无需推断未来状态
+
 $$
 \mathbf{A}_{t}^{k-1} = \alpha \left( \mathbf{A}_{t}^{k} - \gamma \varepsilon_\theta (\mathbf{O}_t, \mathbf{A}_{t}^{k}, k) + \mathcal{N}(0, \sigma^2 \mathbf{I}) \right)
 $$
+
 训练损失函数：
+
 $$
 \mathcal{L} = \text{MSE} \left( \varepsilon_k, \varepsilon_\theta (\mathbf{O}_t, \mathbf{A}_{t}^{0} + \varepsilon_k, k) \right)
 $$
+
 在去噪过程的输出中排除观测特征 $\mathbf{O}_t$
 
 - 显著提升了推理速度并更好地适应实时控制
